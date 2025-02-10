@@ -1,0 +1,695 @@
+/* Styles de base */
+* {
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #E5DEFF;
+  font-family: 'Poppins', sans-serif; 
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* pour que le body occupe toute la hauteur de l'écran */
+}
+
+main {
+  flex: 1; /* Permet de pousser le footer en bas de la page */
+}
+
+main p {
+  align-items: center; /* Centrer le texte */
+}
+
+/* Navigation */
+.navigation {
+  position: sticky;
+  top: 0;
+  height: 90px;
+  background: linear-gradient(90deg, #fcfcff, #e9e4fd, #fcfcff);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* pour que la barre de navigation reste au-dessus de tout le reste */
+  display: flex;
+  align-items: center;
+}
+
+.nav-contenu {
+  max-width: 1200px; /* Limite la largeur du contenu */
+  margin: 0 auto; /* Centre le contenu */
+  display: flex;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.logo img {
+  height: 50px;
+  margin-right: auto; /* Pousse le logo à gauche */
+}
+
+.menu {
+  display: flex;
+  gap: 3rem;
+}
+
+.menu a {
+  color: #333333;
+  padding: 10px 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #A890FF;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+/* Sections communes */
+section {
+  scroll-margin-top: 100px; /* décalage pour centrer le titre sous la barre de navigation */
+}
+
+.contenu {
+  max-width: 1200px; /* Limite la largeur du contenu */
+  margin: 0 auto;
+}
+
+/* Section Accueil */
+#accueil {
+  min-height: 100vh; /* 100% de la hauteur de l'écran */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url('http://localhost/portfolio/assets/img/fond-lavande.svg'); /* image de fond */
+  background-size: cover; /* redimensionner l'image */
+  background-position: center; /* centrer l'image */
+  background-attachment: fixed; /* fixer l'image de fond */
+}
+
+.titre-principal {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 1s ease forwards; 
+}
+
+.sous-titre {
+  color: black;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  opacity : 0;
+  animation: fadeInUp 1s ease forwards 0.3s;
+  font-family: 'Caveat', cursive;
+}
+
+/* Section À propos */
+.apropos .texte-apropos {
+  text-align: center;
+  font-size: larger;
+}
+
+.apropos .skill-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.apropos .icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #2563eb;
+}
+
+.apropos .soft-skill {
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.apropos .soft-skill:hover {
+  transform: scale(1.05); /* agrandit les icônes */
+}
+
+.apropos .soft-icon:hover {
+  transform: scale(1.1);
+  background-color: #A09BB2;
+  color: #ffffff;
+}
+
+/* Cartes et grilles */
+.carte {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Projets */
+.grille-projets {
+  display: grid;
+  gap: 2rem;
+}
+
+.carte-projet {
+  width: 100%;
+  height: 300px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.carte-interieur {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.carte-avant,
+.carte-arriere {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden; /* cache l'arrière de la carte */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* espace intérieur */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carte-avant {
+  background-color: white;
+}
+
+.carte-arriere {
+  background-color: #dcbef6;
+  color: #333333;
+  transform: rotateY(180deg);
+  text-align: justify;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  font-style: italic;
+  text-align: center;
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
+}
+
+.grille-projets {
+  display: grid; /* grille pour afficher les projets */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 300px de largeur minimale */
+}
+
+.carte-projet.flipped .carte-interieur {
+  transform: rotateY(180deg);
+}
+
+/* Bouton GitHub */
+.bouton-github {
+    margin-top: 1rem;
+    background-color: #6d28d9;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.bouton-github:hover {
+    background-color: #4c1d95;
+}
+
+.bouton-github .github-logo {
+    width: 20px;
+    height: 20px;
+}
+
+/* Section Compétences */
+.skills-section {
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  margin-bottom: 2rem; /* marge en bas pour séparer les sections */
+}
+
+.skills-section h2 {
+  margin-top: 0; /* supprime la marge en haut */
+  margin-bottom: 1.5rem; /* marge en bas pour séparer les éléments */
+  font-size: 1.5rem;
+  color: #4F5B93;
+  text-align: center;
+}
+
+.langages {
+  background-color: #f0f9ff;
+}
+
+.logiciels {
+  background-color: #f0fdf4;
+}
+
+.langues {
+  background-color: #fff7ed;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* réduire la taille minimale des colonnes */
+  gap: 1rem;
+  justify-items: center;
+}
+
+.skill-card {
+  background-color: white;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);;
+  cursor: pointer;
+}
+
+.skill-card span {
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.skill-card .flag {
+  width: 30px;
+  height: 30px;
+}
+
+.skill-label {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 1rem;
+}
+
+/* Tooltip */
+.skill-card::after {
+  background-color: #1f2937;
+  color: white;
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  white-space: nowrap; /* empêche le texte de se casser */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* taille minimale des colonnes */
+  }
+
+  .skills-grid.compact {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  }
+
+  .skill-card {
+    width: 60px; /* largeur des cartes */
+    height: 60px; /* hauteur des cartes */
+  }
+
+  .skill-card i {
+    font-size: 1.2rem; /* taille des icônes */
+  }
+
+  .skill-card .flag {
+    width: 20px; /* taille des drapeaux */
+    height: 20px; /* taille des drapeaux */
+  }
+}
+
+.soft-skills-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding-top: 1rem;
+}
+
+.soft-skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.soft-skill:hover {
+  transform: scale(1.05); /* agrandit les icônes */
+}
+
+.soft-icon {
+  background-color: #f3f4f6;
+  border-radius: 9999px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Formulaire de contact */
+/* Conteneur global */
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.formulaire-contact {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 45%;
+}
+
+/* Groupes de champs */
+.groupe-form {
+  margin-bottom: 1rem;
+}
+
+.groupe-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333333;
+}
+
+.groupe-form input,
+.groupe-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.success-message {
+  color: green;
+  font-weight: bold;
+}
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+/* Vidéo */
+.videoettexte {
+display: flex;
+  flex-direction: column;
+  align-items: center; /* centre la vidéo et le texte */
+  width: 45%;
+  max-width: 400px;
+}
+
+.video-container {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  width: 100%;
+  aspect-ratio: 16/9; /* assure un bon ratio */
+  border-radius: 10px;
+  border: 5px solid white;
+}
+
+/* Texte sous la vidéo */
+.video-caption {
+  margin-top: 10px; /* ajoute un espace entre la vidéo et le texte */
+  text-align: center;
+  font-style: italic;
+  font-size: 1rem;
+  color: black;
+  max-width: 90%;
+}
+
+/* Responsive - Ajustement sur mobile */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column; /* passer en colonne sur mobile */
+    align-items: center;
+  }
+
+  .formulaire-contact {
+    max-width: 100%;
+  }
+
+  .video-container {
+    max-width: 100%;
+  }
+}
+
+/* Boutons */
+.bouton-principal {
+  display: inline-block;
+  background-color: #2e2c33;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 15px #2E2C33;
+}
+
+.bouton-principal:hover {
+  background-color: #101012;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px #3A3740;
+}
+
+/* Bouton flèche */
+.toggle-sidebar {
+  color: #A09BB2;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: fixed;
+  right: 5px; /* décale légèrement vers la gauche */
+  top: 50%;
+  transform: translateY(-50%); /* centre verticalement la flèche */
+}
+
+/* Cacher la sidebar */
+.sidebar-cachee {
+  right: -200px !important; /* cache la sidebar hors écran */
+  transition: right 0.3s ease; /* transition pour un effet de glissement */
+}
+
+/* Sidebar fixe à droite */
+.sidebar-reseaux {
+  background-color: #d9d2f4;
+  border: 1px solid black;
+  position: fixed;
+  right: 20px;
+  top: 50%; /* centre verticalement */
+  transform: translateY(-50%); 
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* espacement entre les icônes */
+  padding: 10px;
+  border-radius: 20px;
+}
+
+/* Icônes de la sidebar */
+.sidebar-reseaux a img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Effet hover sur les icônes */
+.sidebar-reseaux a:hover img {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(90deg, #e9e4fd, #fcfcff, #e9e4fd);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+  width: 100%; 
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .titre-principal {
+    font-size: 2.5rem;
+  }
+
+  .sous-titre {
+    font-size: 1.2rem;
+  }
+
+  .sidebar-reseaux {
+    display: none;
+  }
+}
+
+/* Layout */
+.page-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.projets-section {
+  padding: 40px 0;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.langage-tag {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* Styles pour les tags de langages */
+.langage-html {
+  background-color: #ffebe6;
+  color: #b04500;
+}
+
+.langage-css {
+  background-color: #e8f5ff;
+  color: #006698;
+}
+
+.langage-php {
+  background-color: #4F5B93;
+  color: #FFFFFF;
+}
+
+.langage-python {
+  background-color: #f0f4f6;
+  color: #28a745;
+}
+
+
+.message-error {
+  text-align: center;
+  font-weight: lighter;
+  /* centrer le message au milieu de la page */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.export-button {
+  color: white;
+  background-color: #a09bb2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px; /* espacement interne */
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.export-button i {
+  margin-right: 8px; /* espacement entre l'icône et le texte */
+}
+
+.export-button:hover {
+  background-color: #2e2c33;
+}

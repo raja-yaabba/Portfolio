@@ -1,0 +1,12 @@
+# Ignorer les fichiers sensibles
+.env
+.env.local
+.env.production
+.env.development
+
+# Ignorer les dépendances PHP
+/vendor
+
+# Fichiers système
+.DS_Store
+node_modules/
