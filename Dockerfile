@@ -34,6 +34,9 @@ RUN a2enmod rewrite
 # Modifier le fichier Apache pour que `/web/` soit bien la racine du serveur
 RUN sed -i "s|DocumentRoot /var/www/html|DocumentRoot /var/www/web|" /etc/apache2/sites-available/000-default.conf
 
+# Changer les permissions des fichiers pour Apache
+RUN chown -R www-data:www-data /var/www/web && chmod -R 755 /var/www/web
+
 # Vérifier que frontController.php est bien accessible
 RUN test -f /var/www/web/frontController.php || (echo "frontController.php introuvable !" && exit 1)
 
@@ -42,3 +45,6 @@ EXPOSE 80
 
 # Lancer Apache au démarrage
 CMD ["apache2-foreground"]
+
+# Redémarrer Apache
+RUN service apache2 restart
