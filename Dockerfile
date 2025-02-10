@@ -44,6 +44,3 @@ EXPOSE 80
 
 # Lancer Apache au démarrage
 CMD ["apache2-foreground"]
-
-# Redémarrer Apache
-RUN service apache2 restart
