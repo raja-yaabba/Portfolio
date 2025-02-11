@@ -1,6 +1,6 @@
 Require all granted
 Options -Indexes
-DirectoryIndex web/frontController.php
+DirectoryIndex frontController.php
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

@@ -1,9 +1,10 @@
 services:
-  - name: portfolio
+  - name: mon-portfolio
     type: web
     runtime: docker
     repo: https://github.com/raja-yaabba/Portfolio
     region: frankfurt
+    rootDir: web # IMPORTANT : Indique le bon dossier
     envVars:
       - key: PHP_VERSION
         value: 7.4
