@@ -1,0 +1,10 @@
+services:
+  - name: portfolio
+    type: web
+    runtime: docker
+    repo: https://github.com/raja-yaabba/Portfolio
+    region: frankfurt
+    envVars:
+      - key: PHP_VERSION
+        value: 7.4
+    plan: free
