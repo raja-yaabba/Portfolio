@@ -33,11 +33,9 @@ RUN a2enmod rewrite
 # Modifier Apache pour que `/web` soit la racine du serveur
 RUN sed -i "s|DocumentRoot /var/www/html|DocumentRoot /var/www/web|" /etc/apache2/sites-available/000-default.conf
 
-# Ajouter DirectoryIndex pour `frontController.php`
-RUN echo "<Directory /var/www/web>
-    AllowOverride All
-    Require all granted
-</Directory>" >> /etc/apache2/apache2.conf
+# Modifier apache2.conf pour activer AllowOverride All pour /var/www/web
+RUN sed -i 's|<Directory /var/www/>|<Directory /var/www/web/>|g' /etc/apache2/apache2.conf && \
+    sed -i 's|AllowOverride None|AllowOverride All|g' /etc/apache2/apache2.conf
 
 # Corriger les permissions des fichiers pour Apache
 RUN chown -R www-data:www-data /var/www && chmod -R 755 /var/www
