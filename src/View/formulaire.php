@@ -8,26 +8,20 @@ $contactController = new ContactController();
     <h2 class="section-title">Me contacter</h2>
 
     <div class="contact-container">
-        <!-- Formulaire -->
-        <form action="/portfolio/web/frontController.php?controller=contact&action=sendMessage" method="POST" class="formulaire-contact">
-            <?php if (isset($messageStatut)): ?>
-                <p class="message-feedback <?= strpos($messageStatut, 'Erreur') !== false ? 'error-message' : 'success-message' ?>">
-                    <?= htmlspecialchars($messageStatut) ?>
-                </p>
-            <?php endif; ?>
+        <!-- Message de statut ajouté ici -->
+        <div class="message-status"></div>
 
+        <!-- Formulaire -->
+        <form id="contactForm" class="formulaire-contact">
             <div class="groupe-form">
-                <!-- Champ pour le nom -->
                 <label for="nom">Nom*</label>
                 <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
             </div>
             <div class="groupe-form">
-                <!-- Champ pour l'email -->
                 <label for="email">Email*</label>
                 <input type="email" id="email" name="email" placeholder="nom@exemple.com" required>
             </div>
             <div class="groupe-form">
-                <!-- Champ pour le message -->
                 <label for="message">Message*</label>
                 <textarea id="message" name="message" rows="4" placeholder="Votre message" required></textarea>
             </div>

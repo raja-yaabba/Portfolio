@@ -44,16 +44,15 @@ class ContactController extends MainController
 
                 // Envoi du mail
                 $mail->send();
-                $messageStatut = "Votre message a bien été envoyé";
+                $response = ["status" => "success", "message" => "Votre message a bien été envoyé"];
             } catch (Exception $e) {
-                $messageStatut = "Erreur lors de l'envoi : " . $mail->ErrorInfo;
+                $response = ["status" => "error", "message" => "Erreur lors de l'envoi : " . $mail->ErrorInfo];
             }
 
-            static::afficheVue([
-                "pagetitle" => "Contact",
-                "messageStatut" => $messageStatut,
-                "cheminVueBody" => __DIR__ . "/../View/formulaire.php"
-            ]);
+            // Envoi de la réponse JSON pour AJAX
+            header('Content-Type: application/json');
+            echo json_encode($response);
+            exit;
         }
     }
 }
