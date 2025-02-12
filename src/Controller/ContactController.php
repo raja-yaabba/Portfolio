@@ -20,19 +20,19 @@ class ContactController extends MainController
             $mail = new PHPMailer(true);
 
             try {
-                // Configuration SMTP Brevo
+                // Configuration SMTP Mailtrap
                 $mail->isSMTP();
-                $mail->Host       = getenv('SMTP_HOST'); // Serveur SMTP Brevo
+                $mail->Host       = getenv('SMTP_HOST'); // Serveur SMTP Mailtrap
                 $mail->SMTPAuth   = true;
-                $mail->Username   = getenv('SMTP_USERNAME'); // Identifiant SMTP Brevo
-                $mail->Password   = getenv('SMTP_PASSWORD'); // Mot de passe SMTP Brevo
+                $mail->Username   = getenv('SMTP_USERNAME'); // Identifiant SMTP Mailtrap
+                $mail->Password   = getenv('SMTP_PASSWORD'); // Mot de passe SMTP Mailtrap
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Sécurité TLS
-                $mail->Port       = getenv('SMTP_PORT'); // Port SMTP Brevo
+                $mail->Port       = getenv('SMTP_PORT'); // Port SMTP Mailtrap
 
                 // Expéditeur et destinataire
-                $mail->setFrom('raja.yb@outlook.fr', 'Portfolio Contact'); // Mon email vérifié sur Brevo
-                $mail->addReplyTo($email, $nom); // Email du visiteur pour répondre directement
-                $mail->addAddress('raja.yb@outlook.fr', 'Raja YAABBA'); // Mon email pour recevoir les messages
+                $mail->setFrom('contact@rajay.online', 'Portfolio Contact'); // Email vérifié sur Mailtrap
+                $mail->addReplyTo($email, $nom); // Réponse au visiteur
+                $mail->addAddress('contact@rajay.online', 'Raja YAABBA'); // Mon email pour recevoir les messages
 
                 // Contenu du mail
                 $mail->isHTML(true);
