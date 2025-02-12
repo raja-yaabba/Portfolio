@@ -37,7 +37,7 @@ $auteur = "Raja Y.";
                 <a href="?action=home#contact">Contact</a>
             </div>
             <!-- Bouton Exporter mon CV -->
-            <a href="/portfolio/assets/pdf/CV_YAABBA.pdf" download class="export-button">
+            <a href="/assets/pdf/CV_YAABBA.pdf" download class="export-button">
                 <i class="fa-solid fa-download"></i>
                 <span>Exporter mon CV</span>
             </a>

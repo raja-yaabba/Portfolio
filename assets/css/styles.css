@@ -92,7 +92,7 @@ section {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-image: url('http://localhost/portfolio/assets/img/fond-lavande.svg'); /* image de fond */
+  background-image: url('/assets/img/fond-lavande.svg'); /* image de fond */
   background-size: cover; /* redimensionner l'image */
   background-position: center; /* centrer l'image */
   background-attachment: fixed; /* fixer l'image de fond */
