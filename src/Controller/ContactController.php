@@ -6,6 +6,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require __DIR__ . '/../../vendor/autoload.php';
+require __DIR__ . '/../../env_loader.php'; // Charge les variables d'environnement
 
 class ContactController extends MainController
 {
@@ -19,22 +20,23 @@ class ContactController extends MainController
             $mail = new PHPMailer(true);
 
             try {
-                // Configuration SMTP Mailtrap
+                // Configuration SMTP Brevo
                 $mail->isSMTP();
-                $mail->Host       = 'sandbox.smtp.mailtrap.io'; // ✅ Host Mailtrap
+                $mail->Host       = getenv('SMTP_HOST'); // Serveur SMTP Brevo
                 $mail->SMTPAuth   = true;
-                $mail->Username   = '35db268c055bc8';  // ✅ Ton username Mailtrap
-                $mail->Password   = '02915817ed4bce';  // ✅ Ton password Mailtrap
-                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // ✅ Sécurité TLS
-                $mail->Port       = 2525; // ✅ Port recommandé
+                $mail->Username   = getenv('SMTP_USERNAME'); // Identifiant SMTP Brevo
+                $mail->Password   = getenv('SMTP_PASSWORD'); // Mot de passe SMTP Brevo
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Sécurité TLS
+                $mail->Port       = getenv('SMTP_PORT'); // Port SMTP Brevo
 
                 // Expéditeur et destinataire
-                $mail->setFrom('noreply@monportfolio.com', 'Portfolio Contact');
-                $mail->addAddress('test@example.com', 'Test Mailtrap'); // Remplace par un email fictif
+                $mail->setFrom('raja.yb@outlook.fr', 'Portfolio Contact'); // Mon email vérifié sur Brevo
+                $mail->addReplyTo($email, $nom); // Email du visiteur pour répondre directement
+                $mail->addAddress('raja.yb@outlook.fr', 'Raja YAABBA'); // Mon email pour recevoir les messages
 
                 // Contenu du mail
                 $mail->isHTML(true);
-                $mail->Subject = "Nouveau message portfolio";
+                $mail->Subject = "Nouveau message du portfolio";
                 $mail->Body    = "<strong>Nom :</strong> $nom<br>
                                   <strong>Email :</strong> $email<br>
                                   <strong>Message :</strong><br>$message";
@@ -42,9 +44,9 @@ class ContactController extends MainController
 
                 // Envoi du mail
                 $mail->send();
-                $messageStatut = "✅ Votre message a bien été envoyé via Mailtrap.";
+                $messageStatut = "Votre message a bien été envoyé";
             } catch (Exception $e) {
-                $messageStatut = "❌ Erreur lors de l'envoi : " . $mail->ErrorInfo;
+                $messageStatut = "Erreur lors de l'envoi : " . $mail->ErrorInfo;
             }
 
             static::afficheVue([
