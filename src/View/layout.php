@@ -27,7 +27,7 @@ $auteur = "Raja Y.";
     <nav class="navigation">
         <div class="nav-contenu">
             <a href="?action=home#accueil" class="logo">
-                <img src="/portfolio/assets/img/logo.png" alt="Logo">
+                <img src="http://localhost/portfolio/assets/img/logo.png" alt="Logo">
             </a>
             <div class="menu">
                 <a href="?action=home#accueil">Accueil</a>
@@ -52,10 +52,10 @@ $auteur = "Raja Y.";
     <!-- Sidebar Réseaux Sociaux -->
     <div class="sidebar-reseaux sidebar-visible">
         <a href="https://www.linkedin.com/in/raja-yaabba/" target="_blank" aria-label="LinkedIn">
-            <img src="/portfolio/assets/img/linkedin.svg" alt="LinkedIn">
+            <img src="http://localhost/portfolio/assets/img/linkedin.svg" alt="LinkedIn">
         </a>
         <a href="https://github.com/raja-yaabba" target="_blank" aria-label="GitHub">
-            <img src="/portfolio/assets/img/github.svg" alt="GitHub">
+            <img src="http://localhost/portfolio/assets/img/github.svg" alt="GitHub">
         </a>
     </div>
 
@@ -69,6 +69,6 @@ $auteur = "Raja Y.";
         </div>
     </footer>
 
-    <script src="/portfolio/assets/js/animations.js"></script>
+    <script src="http://localhost/portfolio/assets/js/animations.js"></script>
 </body>
 </html>
