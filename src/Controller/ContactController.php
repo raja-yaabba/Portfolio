@@ -33,6 +33,7 @@ class ContactController extends MainController
                 $mail->setFrom('contact@rajay.online', 'Portfolio Contact'); // Email vérifié sur Mailtrap
                 $mail->addReplyTo($email, $nom); // Réponse au visiteur
                 $mail->addAddress('contact@rajay.online', 'Raja YAABBA'); // Mon email pour recevoir les messages
+                $mail->addAddress('raja.yb@outlook.fr', 'Raja YAABBA');  // Mon adresse mail personnelle
 
                 // Contenu du mail
                 $mail->isHTML(true);
