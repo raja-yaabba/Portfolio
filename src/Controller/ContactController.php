@@ -6,7 +6,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require __DIR__ . '/../../vendor/autoload.php';
-require __DIR__ . '/../../env_loader.php'; // Charge les variables d'environnement
+require __DIR__ . '/../env_loader.php'; // Charge les variables d'environnement
 
 class ContactController extends MainController
 {
