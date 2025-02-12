@@ -1,7 +1,12 @@
 Require all granted
 Options -Indexes
 DirectoryIndex frontController.php
+
 RewriteEngine On
+# Ne pas rediriger les fichiers statiques (CSS, JS, images)
+RewriteCond %{REQUEST_URI} !^/assets/
+
+# Rediriger toutes les requêtes vers frontController.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ frontController.php [QSA,L]
