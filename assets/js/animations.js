@@ -1,7 +1,7 @@
 // Démarrer les animations une fois la page complètement chargée
 document.addEventListener('DOMContentLoaded', () => {
     animerAuDefilement();
-    initContactForm(); // initialisation du formulaire en AJAX
+    initContactForm(); // initialisation de l'Ajax sur le formulaire
 });
 
 // Ajout d'une navigation fluide pour les ancres
@@ -29,10 +29,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const sidebar = document.querySelector(".sidebar-reseaux");
     const toggleBtn = document.querySelector(".toggle-sidebar");
 
-    toggleBtn.addEventListener("click", function () {
-        sidebar.classList.toggle("sidebar-cachee");
-        console.log("Classes actuelles :", sidebar.classList);
-    });
+    if (toggleBtn) {
+        toggleBtn.addEventListener("click", function () {
+            sidebar.classList.toggle("sidebar-cachee");
+            console.log("Classes actuelles :", sidebar.classList);
+        });
+    }
 });
 
 // Fonction pour animer les éléments au défilement
@@ -67,19 +69,19 @@ function initContactForm() {
         const formData = new FormData(form);
         const messageStatus = document.querySelector(".message-status");
 
-        fetch(form.action, {
+        fetch("/portfolio/web/frontController.php?controller=contact&action=sendMessage", {
             method: "POST",
             body: formData
         })
-        .then(response => response.json()) // on attend une réponse JSON du serveur
+        .then(response => response.json()) // Attente d'une réponse JSON
         .then(data => {
             messageStatus.innerHTML = data.message;
-            messageStatus.classList.add(data.status === "success" ? "success-message" : "error-message");
+            messageStatus.className = "message-status " + (data.status === "success" ? "success-message" : "error-message");
         })
         .catch(error => {
-            messageStatus.innerHTML = "Erreur lors de l'envoi du message.";
-            messageStatus.classList.add("error-message");
             console.error("Erreur d'envoi :", error);
+            messageStatus.innerHTML = "Une erreur est survenue.";
+            messageStatus.className = "message-status error-message";
         });
     });
 }

@@ -8,8 +8,13 @@ $contactController = new ContactController();
     <h2 class="section-title">Me contacter</h2>
 
     <div class="contact-container">
-        <!-- Message de statut ajouté ici -->
-        <div class="message-status"></div>
+        <div class="message-status">
+            <?php if (isset($messageStatut)): ?>
+                <p class="message-feedback <?= strpos($messageStatut, 'Erreur') !== false ? 'error-message' : 'success-message' ?>">
+                    <?= htmlspecialchars($messageStatut) ?>
+                </p>
+            <?php endif; ?>
+        </div>
 
         <!-- Formulaire -->
         <form id="contactForm" class="formulaire-contact">
