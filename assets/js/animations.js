@@ -59,21 +59,23 @@ function animerAuDefilement() {
 }
 
 // Formulaire de contact : envoi des données en AJAX
+// Formulaire de contact : envoi des données en AJAX
 function initContactForm() {
     const form = document.querySelector(".formulaire-contact");
     if (!form) return;
+
+    const messageStatus = form.querySelector(".message-status");
 
     form.addEventListener("submit", function (e) {
         e.preventDefault();
         
         const formData = new FormData(form);
-        const messageStatus = document.querySelector(".message-status");
 
         fetch("/portfolio/web/frontController.php?controller=contact&action=sendMessage", {
             method: "POST",
             body: formData
         })
-        .then(response => response.json()) // Attente d'une réponse JSON
+        .then(response => response.json()) // attente d'une réponse JSON
         .then(data => {
             messageStatus.innerHTML = data.message;
             messageStatus.className = "message-status " + (data.status === "success" ? "success-message" : "error-message");
@@ -85,6 +87,7 @@ function initContactForm() {
         });
     });
 }
+
 
 // Fonction pour retourner les cartes de projets en cliquant dessus
 function flipCard(card) {

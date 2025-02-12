@@ -8,16 +8,16 @@ $contactController = new ContactController();
     <h2 class="section-title">Me contacter</h2>
 
     <div class="contact-container">
-        <div class="message-status">
-            <?php if (isset($messageStatut)): ?>
-                <p class="message-feedback <?= strpos($messageStatut, 'Erreur') !== false ? 'error-message' : 'success-message' ?>">
-                    <?= htmlspecialchars($messageStatut) ?>
-                </p>
-            <?php endif; ?>
-        </div>
-
         <!-- Formulaire -->
         <form id="contactForm" class="formulaire-contact">
+            <div class="message-status">
+                <?php if (isset($messageStatut)): ?>
+                    <p class="message-feedback <?= strpos($messageStatut, 'Erreur') !== false ? 'error-message' : 'success-message' ?>">
+                        <?= htmlspecialchars($messageStatut) ?>
+                    </p>
+                <?php endif; ?>
+            </div>
+
             <div class="groupe-form">
                 <label for="nom">Nom*</label>
                 <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
@@ -30,6 +30,7 @@ $contactController = new ContactController();
                 <label for="message">Message*</label>
                 <textarea id="message" name="message" rows="4" placeholder="Votre message" required></textarea>
             </div>
+            
             <button type="submit" class="bouton-principal">Envoyer</button>
         </form>
 
