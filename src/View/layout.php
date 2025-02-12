@@ -15,10 +15,10 @@ $auteur = "Raja Y.";
     <meta name="description" content="<?php echo htmlspecialchars($description); ?>" />
     <meta name="author" content="<?php echo htmlspecialchars($auteur); ?>" />
     <meta property="og:image" content="/assets/img/og-image.png" />
-    <link rel="icon" href="http://localhost/portfolio/assets/img/logo.png" type="image/png">
+    <link rel="icon" href="/portfolio/assets/img/logo.png" type="image/png">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="http://localhost/portfolio/assets/css/styles.css">
+    <link rel="stylesheet" href="/portfolio/assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -27,7 +27,7 @@ $auteur = "Raja Y.";
     <nav class="navigation">
         <div class="nav-contenu">
             <a href="?action=home#accueil" class="logo">
-                <img src="http://localhost/portfolio/assets/img/logo.png" alt="Logo">
+                <img src="/portfolio/assets/img/logo.png" alt="Logo">
             </a>
             <div class="menu">
                 <a href="?action=home#accueil">Accueil</a>
@@ -37,7 +37,7 @@ $auteur = "Raja Y.";
                 <a href="?action=home#contact">Contact</a>
             </div>
             <!-- Bouton Exporter mon CV -->
-            <a href="http://localhost/portfolio/assets/pdf/CV_YAABBA.pdf" download class="export-button">
+            <a href="/portfolio/assets/pdf/CV_YAABBA.pdf" download class="export-button">
                 <i class="fa-solid fa-download"></i>
                 <span>Exporter mon CV</span>
             </a>
@@ -52,10 +52,10 @@ $auteur = "Raja Y.";
     <!-- Sidebar Réseaux Sociaux -->
     <div class="sidebar-reseaux sidebar-visible">
         <a href="https://www.linkedin.com/in/raja-yaabba/" target="_blank" aria-label="LinkedIn">
-            <img src="http://localhost/portfolio/assets/img/linkedin.svg" alt="LinkedIn">
+            <img src="/portfolio/assets/img/linkedin.svg" alt="LinkedIn">
         </a>
         <a href="https://github.com/raja-yaabba" target="_blank" aria-label="GitHub">
-            <img src="http://localhost/portfolio/assets/img/github.svg" alt="GitHub">
+            <img src="/portfolio/assets/img/github.svg" alt="GitHub">
         </a>
     </div>
 
@@ -69,6 +69,6 @@ $auteur = "Raja Y.";
         </div>
     </footer>
 
-    <script src="http://localhost/portfolio/assets/js/animations.js"></script>
+    <script src="/portfolio/assets/js/animations.js"></script>
 </body>
 </html>

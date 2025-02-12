@@ -9,7 +9,7 @@ $contactController = new ContactController();
 
     <div class="contact-container">
         <!-- Formulaire -->
-        <form action="http://localhost/portfolio/web/frontController.php?controller=contact&action=sendMessage" method="POST" class="formulaire-contact">
+        <form action="/portfolio/web/frontController.php?controller=contact&action=sendMessage" method="POST" class="formulaire-contact">
             <?php if (isset($messageStatut)): ?>
                 <p class="message-feedback <?= strpos($messageStatut, 'Erreur') !== false ? 'error-message' : 'success-message' ?>">
                     <?= htmlspecialchars($messageStatut) ?>
