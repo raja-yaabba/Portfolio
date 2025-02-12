@@ -30,7 +30,7 @@
                                     <li>Sessions et cookies pour personnaliser l’expérience utilisateur et stocker les préférences.</li>
                                 </ul>
                                 <a href="https://github.com/raja-yaabba/gestion-trajets-php" target="_blank" class="bouton-github">
-                                    <img src="http://localhost/portfolio/assets/img/github2.svg" alt="GitHub" class="github-logo">
+                                    <img src="/assets/img/github2.svg" alt="GitHub" class="github-logo">
                                     Voir le code
                                 </a>
                             </div>
@@ -55,7 +55,7 @@
                                     <li>Interface intuitive pour explorer les relevés en temps réel.</li>
                                 </ul>
                                 <a href="https://github.com/raja-yaabba/temperature-cours-deau" target="_blank" class="bouton-github">
-                                    <img src="http://localhost/portfolio/assets/img/github2.svg" alt="GitHub" class="github-logo">
+                                    <img src="/assets/img/github2.svg" alt="GitHub" class="github-logo">
                                     Voir le code
                                 </a>
                             </div>
@@ -78,7 +78,7 @@
                                     <li>Navigation intuitive avec menu déroulant et sessions dédiées aux activités locales.</li>
                                 </ul>
                                 <a href="https://github.com/raja-yaabba/SiteTouristiquePortoSanto" target="_blank" class="bouton-github">
-                                    <img src="http://localhost/portfolio/assets/img/github2.svg" alt="GitHub" class="github-logo">
+                                    <img src="/assets/img/github2.svg" alt="GitHub" class="github-logo">
                                     Voir le code
                                 </a>
                             </div>

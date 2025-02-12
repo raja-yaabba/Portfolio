@@ -83,15 +83,15 @@
                 <h2 class="section-title">Langues</h2>
                 <div class="skills-grid">
                     <div class="skill-card" data-tooltip="Langue maternelle">
-                        <img src="http://localhost/portfolio/assets/img/france.svg" alt="Français" class="flag">
+                        <img src="/assets/img/france.svg" alt="Français" class="flag">
                         <span>Français</span>
                     </div>
                     <div class="skill-card" data-tooltip="Niveau avancé (B2)">
-                        <img src="http://localhost/portfolio/assets/img/royaume-uni.svg" alt="Anglais" class="flag">
+                        <img src="/assets/img/royaume-uni.svg" alt="Anglais" class="flag">
                         <span>Anglais</span>
                     </div>
                     <div class="skill-card" data-tooltip="Niveau intermédiaire (B1)">
-                        <img src="http://localhost/portfolio/assets/img/espagne.svg" alt="Espagnol" class="flag">
+                        <img src="/assets/img/espagne.svg" alt="Espagnol" class="flag">
                         <span>Espagnol</span>
                     </div>
                 </div>

@@ -9,3 +9,4 @@ services:
       - key: PHP_VERSION
         value: 7.4
     plan: free
+    staticPublishPath: /var/www/web/assets # Ajout pour rendre les fichiers statiques accessibles
