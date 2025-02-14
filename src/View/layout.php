@@ -17,7 +17,7 @@ $auteur = "Raja Y.";
 
     <!-- Open Graph (Facebook, Twitter, LinkedIn) -->
     <meta property="og:title" content="Découvrez mon Portfolio !">
-    <meta property="og:image" content="https://rajay.online/web/assets/img/og-image.png">
+    <meta property="og:image" content="https://rajay.online/web/assets/img/og-image.png?v=2">
     <meta property="og:url" content="https://rajay.online">
     <meta property="og:type" content="website">
 
