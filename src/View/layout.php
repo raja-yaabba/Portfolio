@@ -1,7 +1,7 @@
 <?php
 // Configuration de base
 $titre = "Raja Y. | Portfolio";
-$description = "Portfolio personnel";
+$description = "Découvrez mon portfolio !";
 $auteur = "Raja Y.";
 ?>
 
@@ -12,12 +12,11 @@ $auteur = "Raja Y.";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?php echo htmlspecialchars($titre); ?></title>
-    <meta name="description" content="<?php echo htmlspecialchars($description); ?>" />
-    <meta name="author" content="<?php echo htmlspecialchars($auteur); ?>" />
 
     <!-- Open Graph (Facebook, Twitter, LinkedIn) -->
-    <meta property="og:title" content="Découvrez mon Portfolio !">
-    <meta property="og:image" content="https://rajay.online/web/assets/img/og-image.png?v=2">
+    <meta name="description" property="og:title" content="<?php echo htmlspecialchars($description); ?>" />
+    <meta name="author" content="<?php echo htmlspecialchars($auteur); ?>" />
+    <meta name="image" property="og:image" content="https://rajay.online/assets/img/og-image.png?v=2">
     <meta property="og:url" content="https://rajay.online">
     <meta property="og:type" content="website">
 
